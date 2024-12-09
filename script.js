@@ -1,16 +1,20 @@
 document.getElementById('speak-button').addEventListener('click', function() {
     const textInput = document.getElementById('text-input').value;
+    const warning = document.getElementById('warning');
     
-    if (textInput.trim() === "") {
-        alert("Пожалуйста, введите текст для озвучивания.");
-        return;
+    // Ограничение на длину текста
+    if (textInput.length > 500) {
+        warning.style.display = 'block'; // Показать предупреждение
+        return; // Если текст слишком длинный, выходим
+    } else {
+        warning.style.display = 'none'; // Скрыть предупреждение
     }
-    
-    const speech = new SpeechSynthesisUtterance(textInput);
-    speech.lang = 'ru-RU'; // Установите язык на русский
-    speech.volume = 1; // Громкость от 0 до 1
-    speech.rate = 1; // Скорость речи
-    speech.pitch = 1; // Тональность
 
-    window.speechSynthesis.speak(speech);
+    if (textInput.trim()) {
+        const speech = new SpeechSynthesisUtterance(textInput);
+        speech.lang = 'ru-RU';
+        window.speechSynthesis.speak(speech);
+    } else {
+        alert("Пожалуйста, введите текст.");
+    }
 });
