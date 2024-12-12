@@ -1,6 +1,0 @@
-textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    resize: none; /* Запретить изменение размера */
-    overflow-y: auto; /* Добавить прокрутку по вертикали */
-}
