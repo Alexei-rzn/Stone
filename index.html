@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Текст в Речь</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Простое веб-приложение</title>
 </head>
 <body>
     <div class="container">
-        <h1>Текст в Речь</h1>
-        <textarea id="text-input" rows="10" placeholder="Введите текст здесь..."></textarea>
-        <button id="speak-button">Слушать</button>
-        <p id="warning" style="color:red; display:none;">Внимание! Текст слишком длинный. Пожалуйста, используйте текст длиной до 500 символов.</p>
+        <h1>Добро пожаловать в простое веб-приложение!</h1>
+        <form id="dataForm">
+            <label for="inputData">Введите данные:</label>
+            <input type="text" id="inputData" placeholder="Введите текст" required>
+            <button type="submit">Отправить</button>
+        </form>
+        <div id="result"></div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>
